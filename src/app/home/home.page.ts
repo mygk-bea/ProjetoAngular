@@ -27,8 +27,6 @@ export class HomePage {
     if(tecla == "+/-") {
       let ultimoItem = this.expressao.split('')[this.expressao.length-1];
 
-      this.expressao.split('').splice(this.expressao.split('').indexOf(this.expressao.length-1),1,'-' + ultimoItem);
-
       console.log();
     }
   }
