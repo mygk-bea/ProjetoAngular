@@ -14,13 +14,13 @@
 
           <ion-row class="resultado_dinamico ion-text-end">
             <ion-col>
-              <ion-label>{{ this.expressao }}</ion-label>
+              <ion-label>{{ this.resultado }}</ion-label>
             </ion-col>
           </ion-row>
 
           <ion-row class="btn-backspace ion-justify-content-end ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="exibir('x')"> <ion-icon name="backspace-outline"></ion-icon> </ion-button>
+              <ion-button (click)="executar('backspace')"> <ion-icon name="backspace-outline"></ion-icon> </ion-button>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -40,10 +40,10 @@
           <!-- Primeira Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="executar('C')"> C </ion-button>
+              <ion-button (click)="executar('clear')"> C </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="executar('+/-')"> +/- </ion-button>
+              <ion-button (click)="executar('change')"> +/- </ion-button>
             </ion-col>
             <ion-col size="3">
               <ion-button (click)="exibir('%')"> % </ion-button>
@@ -108,10 +108,10 @@
               <ion-button (click)="exibir('0')"> 0 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('.')"> . </ion-button>
+              <ion-button (click)="exibir(',')"> , </ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button (click)="exibir('=')"> = </ion-button>
+              <ion-button (click)="executar('=')"> = </ion-button>
             </ion-col>
           </ion-row> 
 
