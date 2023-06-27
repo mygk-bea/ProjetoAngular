@@ -1,26 +1,25 @@
 <ion-content [fullscreen]="true">
-  <ion-row>
-    <ion-col size="12">
+  <ion-row class="calculadora">
+    <ion-col size="12" >
 
       <!-- Resultado -->
       <ion-row class="section_resultado">
         <ion-col>
-
           <ion-row class="resultado ion-text-end">
             <ion-col>
-              <ion-label>{{ this.expressao }}</ion-label>
+              <ion-label class="label_resultado">{{ this.expressao }}</ion-label>
             </ion-col>
           </ion-row>
 
           <ion-row class="resultado_dinamico ion-text-end">
             <ion-col>
-              <ion-label>{{ this.resultado }}</ion-label>
+              <ion-label class="label_resultado label_resultado-dinamico">{{ this.resultado }}</ion-label>
             </ion-col>
           </ion-row>
 
-          <ion-row class="btn-backspace ion-justify-content-end ion-text-center">
+          <ion-row class="ion-justify-content-end ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="executar('backspace')"> <ion-icon name="backspace-outline"></ion-icon> </ion-button>
+              <ion-button class="btn btn_backspace-simbolos" (click)="executar('backspace')"> <ion-icon  name="backspace-outline" class="icon-backspace"></ion-icon> </ion-button>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -40,16 +39,16 @@
           <!-- Primeira Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="executar('clear')"> C </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-clear" (click)="executar('clear')"> C </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="executar('change')"> +/- </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="executar('change')"> +/- </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('%')"> % </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir('%')"> % </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('/')"> / </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir('/')"> / </ion-button>
             </ion-col>
           </ion-row>
           
@@ -57,61 +56,61 @@
           <!-- Segunda Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="exibir('7')"> 7 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('7')"> 7 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('8')"> 8 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('8')"> 8 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('9')"> 9 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('9')"> 9 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('*')"> * </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir('*')"> * </ion-button>
             </ion-col>
           </ion-row>
 
           <!-- Terceira Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="exibir('4')"> 4 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('4')"> 4 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('5')"> 5 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('5')"> 5 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('6')"> 6 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('6')"> 6 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('-')"> - </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir('-')"> - </ion-button>
             </ion-col>
           </ion-row>
 
           <!-- Quarta Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="exibir('1')"> 1 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('1')"> 1 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('2')"> 2 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('2')"> 2 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('3')"> 3 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('3')"> 3 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir('+')"> + </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir('+')"> + </ion-button>
             </ion-col>
           </ion-row>
 
           <!-- Quinta Linha -->
           <ion-row class="teclado_linha ion-text-center">
             <ion-col size="3">
-              <ion-button (click)="exibir('0')"> 0 </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-numero"  (click)="exibir('0')"> 0 </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button (click)="exibir(',')"> , </ion-button>
+              <ion-button class="btn btn-teclado btn_teclado-simbolos"  (click)="exibir(',')"> , </ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button (click)="executar('=')"> = </ion-button>
+              <ion-button  class="btn-igual"  (click)="executar('=')"> = </ion-button>
             </ion-col>
           </ion-row> 
 
