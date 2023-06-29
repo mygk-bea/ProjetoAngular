@@ -16,8 +16,8 @@
 
   // Resultado
   .section_resultado{
-    height: 40vh;
-
+    height: 35vh;
+    margin-right: 5vh;
     .resultado_dinamico, .btn-backspace{
       height: 10vh;
     }
@@ -25,13 +25,12 @@
       height: 20vh;
     }
     .label_resultado{
-    font-size: 25px;
+      font-size: 25px;
     }
     .label_resultado-dinamico{
       opacity: 0.5;
     }
-    
-    // Pô é assim mas não rolou  
+  
     .btn_backspace-simbolos{
       .icon-backspace{
         transform: scale(1.6);
@@ -43,12 +42,13 @@
 
   .linha_divisoria{
     height: 5vh;
+    padding-top: 5vh;
   }
 
   // Teclado
   .section_teclado{
     height: 55vh;
-
+    margin-right: 5vh;
     .teclado_linha{
       height: 10vh;
     }
