@@ -14,7 +14,7 @@ export class HomePage {
   expressao: string = '';
   expr_Arr: string[] = [''];
   index_Arr = 0;
-  resultado: string = '0';
+  resultado: string = '';
   sinais = ['+', '-', '*', '/'];
 
   criarElemento() {
