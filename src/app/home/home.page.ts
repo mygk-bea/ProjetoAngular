@@ -33,13 +33,15 @@ export class HomePage {
     }
 
     // Verificando se a duplicidade de sinais é real
-    if(this.sinais.includes(tecla) && this.sinais.includes(this.expressao.split('')[this.expressao.length-1])) {
+    if(this.sinais.includes(tecla) && this.sinais.includes(this.expressao.split('')[this.expressao.length-2])) {
       let array = this.expressao.split('');
 
       // Substituindo no array e na string o último sinal
-      array.splice(array.length-1, 1, tecla);
+      array.splice(array.length-2, 1, tecla);
       this.expr_Arr.splice(this.expr_Arr.length-2, 1, tecla);
       this.expressao = array.join('');
+      
+      console.log(this.expr_Arr);
     } else {
       if(tecla == "." && this.expr_Arr[this.index_Arr].includes(".")){
         tecla = '';
@@ -50,7 +52,7 @@ export class HomePage {
       } else {
         this.expressao += tecla;
       }
-      
+
       // Caso a tecla seja um número, ou uma vírgula, irá inserir no mesmo index do array
       if(tecla != "%") {
         if(Number(tecla) && this.expr_Arr[this.index_Arr] == "/100"){
@@ -63,10 +65,9 @@ export class HomePage {
           this.criarElemento();
         }
       }
-
-      let result = this.expr_Arr.join('');
-      this.resultado = eval(result);
     }
+    let result = this.expr_Arr.join('');
+    this.resultado = eval(result);
 
     // Porcentagem
     if(tecla == '%') {
@@ -86,19 +87,29 @@ export class HomePage {
 
     if(tecla == "backspace") {
       let array = this.expressao.split('');
+      if(this.sinais.includes(array[array.length-2])) {
+        array.pop();
+        array.pop();
+      }
       array.pop();
       this.expressao = array.join('');
 
-      let apagar = this.expr_Arr[this.expr_Arr.length-1].split('');
+      let apagar = this.expr_Arr[this.expr_Arr.length-2].split('');
       apagar.pop();
       this.expr_Arr[this.expr_Arr.length-1] = apagar.join('');
 
       if(this.expr_Arr[this.expr_Arr.length-1] == '') {
+        if(this.sinais.includes(this.expr_Arr[this.expr_Arr.length-2])){
+          this.index_Arr--;
+          this.expr_Arr.pop();
+        }
+        this.index_Arr--;
         this.expr_Arr.pop();
         this.criarElemento();
       } else if(this.expr_Arr.length == 0){
         this.expr_Arr = [''];
       }
+      console.log(this.expr_Arr)
     }
 
     if(tecla == "change") {
