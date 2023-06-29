@@ -15,7 +15,6 @@ export class HomePage {
   expr_Arr: string[] = [''];
   index_Arr = 0;
   resultado: string = '';
-  verifica_igual: boolean = false;
   sinais = ['+', '-', '*', '/'];
 
   criarElemento() {
@@ -27,7 +26,7 @@ export class HomePage {
     if(tecla == '.' && !Number(this.expr_Arr[this.expr_Arr.length-1])){
       this.expressao += "0";
       this.expr_Arr[this.index_Arr] += "0";
-    } else if((tecla == '%' && !Number(this.expr_Arr[this.expr_Arr.length-1]))){
+    } else if((tecla == '%' && (!Number(this.expr_Arr[this.expr_Arr.length-1])))){
       tecla = '';
     } else if(this.expressao == '' && (this.sinais.includes(tecla) || tecla == "%")){
       tecla = '';
@@ -65,7 +64,6 @@ export class HomePage {
         }
       }
 
-      console.log(this.expr_Arr)
       let result = this.expr_Arr.join('');
       this.resultado = eval(result);
     }
@@ -83,7 +81,6 @@ export class HomePage {
       this.expressao = '';
       this.expr_Arr = [''];
       this.index_Arr = 0;
-
       this.resultado = '';
     }
 
@@ -112,7 +109,6 @@ export class HomePage {
       let itemString = `${Number(numerosExpr[numerosExpr.length-1]) * -1}`;
 
       numerosExpr.splice(numerosExpr.length-1, 1, itemString);
-
       this.expressao = numerosExpr.join(' ')
     }
 
@@ -135,9 +131,5 @@ export class HomePage {
     
     this.expressao = this.resultado;
     this.expr_Arr = [this.resultado];
-    this.criarElemento();
-
-    console.log(this.expr_Arr)
-    return this.verifica_igual = true;
   }
 }
